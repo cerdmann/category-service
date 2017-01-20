@@ -1,0 +1,8 @@
+---
+applications:
+- name: erds-web-dotnetcore
+  random-route: true
+  memory: 512M
+  disk: 2G
+  buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack.git
+  path: ./bin/release/netcoreapp1.1/publish 
