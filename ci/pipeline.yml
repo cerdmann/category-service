@@ -51,9 +51,12 @@ resources:
 
 jobs:
   - name: build
+    serial_groups: [version]
     plan: 
       - get: git-repo
         trigger: true
+      - get: version
+        params: {bump: minor}
       - task: build
         file: git-repo/ci/tasks/build.yml
       - put: gh-release 
