@@ -4,15 +4,15 @@ platform: linux
 image_resource: 
   type: docker-image
   source: 
-    repository: microsoft/aspnetcore-build
-    tag: "latest"
+    repository: ubuntu 
+    tag: '14.04' 
 
 inputs: 
   - name: git-repo
-  - name: resource-version
+  - name: gh-release 
 
 outputs:
   - name: artifact
 
 run:
-  path: git-repo/ci/scripts/build.sh
+  path: git-repo/ci/scripts/untar.sh
