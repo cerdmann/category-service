@@ -1,0 +1,18 @@
+---
+platform: linux
+
+image_resource: 
+  type: docker-image
+  source: 
+    repository: ubuntu 
+    tag: '14.04' 
+
+inputs: 
+  - name: git-repo
+  - name: gh-release 
+
+outputs:
+  - name: artifact
+
+run:
+  path: git-repo/ci/scripts/untar.sh
